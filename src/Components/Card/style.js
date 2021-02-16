@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  width: 12vw;
-  height: 30vh;
-  margin: 10px;
-  border-radius: 10px;
+  width: 9vw;
+  height: 25vh;
+  margin: 5px;
+  border-radius: 5px;
   overflow: hidden;
   img {
     width: 100%;
