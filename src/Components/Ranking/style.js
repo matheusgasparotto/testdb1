@@ -1,5 +1,22 @@
 import styled from "styled-components";
+import { TableContainer } from "@material-ui/core";
 
-export const Table = styled.table`
-  width: 50%;
+export const StyledTable = styled(TableContainer)`
+  font-family: "roboto";
+  width: 30% !important;
+  min-height: 50vh;
+  max-height: 80vh;
+  background-color: #c93e129c;
+  border-radius: 10px;
+  margin: 30px;
+  th {
+    font-size: 1.2rem;
+    background-color: black;
+    color: #fff;
+  }
+
+  td {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
 `;

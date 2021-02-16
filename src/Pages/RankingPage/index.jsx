@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Ranking from "../../Components/Ranking";
+import { Container } from "./style";
 
 const RankingPage = () => {
   const [players, setPlayers] = useState([]);
@@ -12,7 +13,11 @@ const RankingPage = () => {
     });
     setPlayers(rankingWithPositions);
   }, []);
-  return <Ranking players={players} />;
+  return (
+    <Container>
+      <Ranking players={players} />;
+    </Container>
+  );
 };
 
 export default RankingPage;
