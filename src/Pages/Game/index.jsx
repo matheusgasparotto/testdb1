@@ -1,9 +1,9 @@
 import HomeContainer from "../../Components/HomeContainer";
-import Card from "../../Components/Card";
+import Board from "../../Components/BoardGame";
 const Game = () => {
   return (
     <HomeContainer>
-      <Card />
+      <Board />
     </HomeContainer>
   );
 };
