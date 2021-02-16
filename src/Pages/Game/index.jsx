@@ -1,11 +1,7 @@
-import HomeContainer from "../../Components/HomeContainer";
 import Board from "../../Components/BoardGame";
+
 const Game = () => {
-  return (
-    <HomeContainer>
-      <Board />
-    </HomeContainer>
-  );
+  return <Board />;
 };
 
 export default Game;

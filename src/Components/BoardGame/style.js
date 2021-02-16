@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import background from "../../img/backgroundGame.jpg";
 
 export const Container = styled.div`
+  height: 100vh;
   width: 100%;
-  height: 60%;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;

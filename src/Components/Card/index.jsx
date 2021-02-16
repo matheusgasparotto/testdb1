@@ -3,7 +3,7 @@ import ReactCardFlip from "react-card-flip";
 import backcard from "../../img/backcard.jpg";
 import { useEffect } from "react";
 
-const Card = ({ character, characters, setCharacters, plays, setPlays }) => {
+const Card = ({ character, characters, setCharacters, moves, setMoves }) => {
   const { name, image, flip, id, match } = character;
 
   const compare = (card1, card2) => {
@@ -14,7 +14,6 @@ const Card = ({ character, characters, setCharacters, plays, setPlays }) => {
     let flipedCards = characters.filter(
       (character) => character.compare === true
     );
-    console.log(flipedCards.length);
     if (flipedCards.length < 2) {
       const newList = characters.map((character) => {
         return {
@@ -22,19 +21,19 @@ const Card = ({ character, characters, setCharacters, plays, setPlays }) => {
           flip: JSON.stringify(character.id) === id ? true : character.flip,
           compare:
             JSON.stringify(character.id) === id ? true : character.compare,
-          match: character.match,
         };
       });
       setCharacters(newList);
     }
   };
+
   useEffect(() => {
     let flipedCards = characters.filter(
       (character) => character.compare === true
     );
 
     if (flipedCards.length === 2) {
-      setPlays(plays + 1);
+      setMoves(moves + 1);
       const newList = characters.map((character) => {
         let match =
           character.id === flipedCards[0].id ||
@@ -49,15 +48,15 @@ const Card = ({ character, characters, setCharacters, plays, setPlays }) => {
           compare: false,
         };
       });
+
       setTimeout(() => {
         setCharacters(newList);
-      }, 1000);
+      }, 700);
     }
   }, [characters]);
 
   return (
     <>
-      {console.log(match)}
       <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
         <StyledCard>
           <img
