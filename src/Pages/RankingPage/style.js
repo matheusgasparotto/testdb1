@@ -8,5 +8,13 @@ export const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  div {
+    margin-left: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
 `;

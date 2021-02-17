@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import Ranking from "../../Components/Ranking";
 import { Container } from "./style";
+import Button from "../../Components/Button";
+import { useHistory } from "react-router-dom";
 
 const RankingPage = () => {
   const [players, setPlayers] = useState([]);
+  const history = useHistory();
+
+  const goToHome = () => {
+    history.push("/");
+  };
 
   useEffect(() => {
     const ranking = JSON.parse(window.localStorage.getItem("Ranking"));
@@ -17,7 +24,12 @@ const RankingPage = () => {
   }, []);
   return (
     <Container>
-      <Ranking players={players} />;
+      <Ranking players={players} />
+      <div>
+        <Button onClick={goToHome} color="#c5ec58">
+          Voltar ao inicio
+        </Button>
+      </div>
     </Container>
   );
 };

@@ -17,12 +17,20 @@ export const Container = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
+  .buttons {
+    display: flex;
+    width: 60%;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0;
+  }
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
     font-family: "roboto";
+    margin: 10px;
   }
 `;

@@ -1,11 +1,32 @@
 import { Container } from "./style";
+import { useHistory } from "react-router-dom";
+
+import Button from "../Button";
 
 const InfoPlayer = ({ player, plays }) => {
+  const history = useHistory();
+
+  const goToHome = () => {
+    history.push("/");
+  };
+
+  const goToRanking = () => {
+    history.push("/ranking");
+  };
+
   return (
     <Container>
       <div>
         <h1>Jogador: {player}</h1>
         <h1>Numero de jogadas: {plays}</h1>
+        <div className="buttons">
+          <Button onClick={goToHome} size="15vw" font="2rem" color="#c5ec58">
+            Voltar ao inicio
+          </Button>
+          <Button onClick={goToRanking} size="15vw" font="2rem" color="#ed907d">
+            Ranking
+          </Button>
+        </div>
       </div>
       <div>
         <p>
