@@ -6,7 +6,7 @@ Link: https://testdb1-aiagp4xgv.vercel.app/
 
 Digite os comandos no terminal:
 
-<code> git clone https://github.com/matheusgasparotto/testdb1.git && cd testdb1 <code/>
+<code> git clone https://github.com/matheusgasparotto/testdb1.git && cd testdb1 </code>
 
 depois
 
