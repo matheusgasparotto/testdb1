@@ -27,6 +27,7 @@ const Board = () => {
           id: idx,
         };
       });
+      setMoves(0);
       setCharacters(list);
     }
   }, [modalEndGame]);
@@ -43,15 +44,22 @@ const Board = () => {
     const matchsCards = characters.filter(
       (character) => character.match === true
     );
+
     const endGame = matchsCards.length >= totalCards - 2;
 
     if (endGame) {
       const ranking = JSON.parse(window.localStorage.getItem("Ranking"));
-      const newRanking = JSON.stringify([
-        ...ranking,
-        { name: name, moves: moves },
-      ]);
-      window.localStorage.setItem("Ranking", newRanking);
+      const isPlayedAgain = ranking.find((player) => player.name === name);
+
+      const newRanking = isPlayedAgain
+        ? ranking.map((player) => {
+            return player.name === name
+              ? { ...player, moves: moves }
+              : { ...player };
+          })
+        : [...ranking, { name: name, moves: moves }];
+
+      window.localStorage.setItem("Ranking", JSON.stringify(newRanking));
       setModalEndGame(true);
     }
   }, [moves]);
