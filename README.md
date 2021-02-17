@@ -1,16 +1,17 @@
 # Deploy
 
-Link: https://testdb1-aiagp4xgv.vercel.app/
+Link: https://testdb1-8ljwctcoa.vercel.app/
+
 
 ## Iniciar projeto localmente.
 
 Digite os comandos no terminal:
 
-git clone https://github.com/matheusgasparotto/testdb1.git && cd testdb1
+<code> git clone https://github.com/matheusgasparotto/testdb1.git && cd testdb1 </code>
 
 depois
 
-yarn && yarn start ou npm install && npm start
+<code> yarn && yarn start </code> ou <code> npm install && npm start </code> 
 
 ### Objetivo
 
