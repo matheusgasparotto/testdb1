@@ -33,4 +33,22 @@ export const Container = styled.div`
     font-family: "roboto";
     margin: 10px;
   }
+
+  @media (max-width: 900px) {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    div {
+      width: 100%;
+    }
+    .buttons {
+      width: 90%;
+    }
+  }
 `;

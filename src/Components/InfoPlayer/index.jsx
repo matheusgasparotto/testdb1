@@ -20,10 +20,10 @@ const InfoPlayer = ({ player, plays }) => {
         <h1>Jogador: {player}</h1>
         <h1>Numero de jogadas: {plays}</h1>
         <div className="buttons">
-          <Button onClick={goToHome} size="15vw" font="2rem" color="#c5ec58">
+          <Button onClick={goToHome} size="40%" font="2rem" color="#c5ec58">
             Voltar ao inicio
           </Button>
-          <Button onClick={goToRanking} size="15vw" font="2rem" color="#ed907d">
+          <Button onClick={goToRanking} size="40%" font="2rem" color="#ed907d">
             Ranking
           </Button>
         </div>

@@ -16,4 +16,11 @@ export const Input = styled.input`
     css`
       border: 1px solid red;
     `};
+  @media (max-width: 900px) {
+    font-size: 1.2rem;
+    width: 22vw;
+  }
+  @media (max-width: 600px) {
+    width: 75vw;
+  }
 `;

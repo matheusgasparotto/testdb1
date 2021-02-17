@@ -17,4 +17,12 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
   }
+
+  @media (max-width: 900px) {
+    background-image: none;
+    justify-content: flex-start;
+    div {
+      width: 100%;
+    }
+  }
 `;

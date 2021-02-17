@@ -25,4 +25,18 @@ export const StyledButton = styled.button`
         font-size: 3.2rem;
       }
     `}
+
+    @media (max-width: 900px) {
+    font-size: 1.7rem;
+    :hover {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
+    :hover {
+      font-size: 1.7rem;
+    }
+  }
 `;

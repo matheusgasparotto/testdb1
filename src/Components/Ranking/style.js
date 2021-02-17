@@ -19,4 +19,17 @@ export const StyledTable = styled(TableContainer)`
     font-weight: 700;
     font-size: 1.1rem;
   }
+
+  @media (max-width: 900px) {
+    width: 100% !important;
+    margin: 0;
+    max-height: none;
+    th {
+      font-size: 0.8rem;
+    }
+
+    td {
+      font-size: 0.8rem;
+    }
+  }
 `;

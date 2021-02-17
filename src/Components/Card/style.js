@@ -13,4 +13,13 @@ export const StyledCard = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width: 900px) {
+    width: 13.1vw;
+    height: 20vh;
+  }
+  @media (max-width: 600px) {
+    width: 17vw;
+    height: 15vh;
+  }
 `;

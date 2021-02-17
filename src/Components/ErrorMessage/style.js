@@ -7,4 +7,7 @@ export const Message = styled.span`
   font-style: italic;
   font-family: "roboto";
   height: 10px;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+  }
 `;
