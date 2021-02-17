@@ -5,28 +5,31 @@ import { Container } from "./style";
 import InfoPlayer from "../InfoPlayer";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import ModalEndGame from "../ModalEndGame";
 
 const Board = () => {
   const [characters, setCharacters] = useState([]);
   const [moves, setMoves] = useState(0);
-  const [matchs, setMatchs] = useState([]);
+  const [modalEndGame, setModalEndGame] = useState(false);
 
   useEffect(async () => {
-    let res = await axios.get("https://rickandmortyapi.com/api/character");
-    let list = res.data.results;
-    list = list.filter((_character, idx) => idx >= 10);
-    list = [...list, ...list].sort(() => Math.random() - 0.5);
-    list = list.map((character, idx) => {
-      return {
-        match: false,
-        name: character.name,
-        image: character.image,
-        flip: false,
-        id: idx,
-      };
-    });
-    setCharacters(list);
-  }, []);
+    if (!modalEndGame) {
+      let res = await axios.get("https://rickandmortyapi.com/api/character");
+      let list = res.data.results;
+      list = list.filter((_character, idx) => idx >= 10);
+      list = [...list, ...list].sort(() => Math.random() - 0.5);
+      list = list.map((character, idx) => {
+        return {
+          match: false,
+          name: character.name,
+          image: character.image,
+          flip: false,
+          id: idx,
+        };
+      });
+      setCharacters(list);
+    }
+  }, [modalEndGame]);
 
   const history = useHistory();
   const { name } = useSelector((state) => state.player);
@@ -34,13 +37,13 @@ const Board = () => {
   useEffect(() => {
     !name && history.push("/");
   }, []);
+
   useEffect(() => {
     const totalCards = 20;
     const matchsCards = characters.filter(
       (character) => character.match === true
     );
-    setMatchs(matchsCards);
-    const endGame = matchs.length >= totalCards;
+    const endGame = matchsCards.length >= totalCards - 2;
 
     if (endGame) {
       const ranking = JSON.parse(window.localStorage.getItem("Ranking"));
@@ -49,23 +52,29 @@ const Board = () => {
         { name: name, moves: moves },
       ]);
       window.localStorage.setItem("Ranking", newRanking);
+      setModalEndGame(true);
     }
   }, [moves]);
 
   return (
-    <Container>
-      {characters.map((character, idx) => (
-        <Card
-          key={idx}
-          moves={moves}
-          setMoves={setMoves}
-          character={character}
-          setCharacters={setCharacters}
-          characters={characters}
-        />
-      ))}
-      <InfoPlayer player={name} plays={moves} />
-    </Container>
+    <>
+      {modalEndGame && (
+        <ModalEndGame moves={moves} setModalEndGame={setModalEndGame} />
+      )}
+      <Container>
+        {characters.map((character, idx) => (
+          <Card
+            key={idx}
+            moves={moves}
+            setMoves={setMoves}
+            character={character}
+            setCharacters={setCharacters}
+            characters={characters}
+          />
+        ))}
+        <InfoPlayer player={name} plays={moves} />
+      </Container>
+    </>
   );
 };
 

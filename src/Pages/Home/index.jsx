@@ -39,7 +39,10 @@ const Home = () => {
         playerName={playerName.name}
         setPlayerName={setPlayerName}
       />
-      <Button onClick={playerName.name !== "" && GoToGame} color="#c5ec58">
+      <Button
+        onClick={playerName.name !== "" ? GoToGame : undefined}
+        color="#c5ec58"
+      >
         Start Game
       </Button>
       <Button onClick={GoToRanking} color="#ed907d">

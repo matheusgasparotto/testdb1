@@ -10,14 +10,19 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
   outline: none;
   ${(props) => css`
     background-color: ${props.color};
     width: ${props.size};
+    font-size: ${props.font};
   `}
-  :hover {
-    cursor: pointer;
-    transition: 0.4s;
-    font-size: 3.2rem;
-  }
+  ${(props) =>
+    !props.font &&
+    css`
+      :hover {
+        transition: 0.4s;
+        font-size: 3.2rem;
+      }
+    `}
 `;

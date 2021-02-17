@@ -10,7 +10,7 @@ const RankingPage = () => {
     if (ranking) {
       ranking.sort((player1, player2) => player1.moves - player2.moves);
       const rankingWithPositions = ranking.map((player, idx) => {
-        return { ...player, position: idx };
+        return { ...player, position: idx + 1 };
       });
       setPlayers(rankingWithPositions);
     }
