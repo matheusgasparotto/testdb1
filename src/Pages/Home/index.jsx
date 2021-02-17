@@ -10,7 +10,7 @@ import ErrorMessage from "../../Components/ErrorMessage";
 
 const Home = () => {
   const [playerName, setPlayerName] = useState({ name: "" });
-  const [error, setError] = useState(" ");
+  const [error, setError] = useState("");
 
   const isAlreadyRegistered = (arr, name) => {
     return arr ? arr.find((character) => character.name === name) : false;

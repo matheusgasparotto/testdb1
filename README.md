@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Deploy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link: https://testdb1-aiagp4xgv.vercel.app/
 
-## Available Scripts
+## Iniciar projeto localmente.
 
-In the project directory, you can run:
+Digite os comandos no terminal:
 
-### `npm start`
+git clone https://github.com/matheusgasparotto/testdb1.git && cd testdb1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+depois
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+yarn && yarn start ou npm install && npm start
 
-### `npm test`
+### Objetivo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O jogo deve começar pedindo o nome do usuário.
 
-### `npm run build`
+Deve conter pelo menos 10 pares de cartas, que devem ser embaralhadas e dispostas em forma de grid com o conteúdo de cada uma delas de forma oculta.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A cada rodada, o usuário deverá escolher duas cartas que devem ser reveladas, verificando se elas formam um par. Caso formem, deve manter o par visivel.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O sistema deve exibir um contador de rodadas, que começa em 0.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ao encontrar todos os pares, o sistema deve exibir uma mensagem de sucesso, a quantidade de rodadas da partida, e um botão para reiniciar o jogo.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Outra informações importante é o ranking de quais usuários utilizaram menos rodadas para concluir.
