@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Input = styled.input`
   width: 20vw;
@@ -10,4 +10,10 @@ export const Input = styled.input`
   font-family: "roboto";
   padding: 10px;
   font-size: 1.6rem;
+  border: 1px;
+  ${(props) =>
+    props.border &&
+    css`
+      border: 1px solid red;
+    `};
 `;
